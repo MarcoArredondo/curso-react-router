@@ -14,31 +14,40 @@ function Menu(){
                <li>
                 <Link to="/profile">Profile</Link>
                 </li>*/}
-                           
-                <li>
-                    <NavLink 
-                    style={({isActive}) => ({
-                        color: isActive ? 'red' : 'blue',
-                    })}
-                    to="/">Home</NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                    style={({isActive}) => ({
-                        color: isActive ? 'red' : 'blue',
-                    })}
-                    to="/blog">Blog</NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                    style={({isActive}) => ({
-                        color: isActive ? 'red' : 'blue',
-                    })}
-                    to="/profile">Profile</NavLink>
-                </li>
+
+                {
+                    routes.map((route) => {
+                        return (
+                            <li>
+                                <NavLink 
+                                    to={route.to}
+                                    style={({isActive}) => ({
+                                        color: isActive ? 'red' : 'blue',
+                                    })}
+                                >
+                                    {route.text}
+                                </NavLink>
+                            </li>   
+                        );
+                    })
+                }
             </ul>
         </nav>
     );
 }
+
+const routes = [];
+routes.push({
+  to: "/",
+  text: "Home",
+});
+routes.push({
+  to: "/blog",
+  text: "Blog",
+});
+routes.push({
+  to: "/profile",
+  text: "Profile",
+});
 
 export {Menu};
