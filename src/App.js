@@ -4,6 +4,8 @@ import { BlogPage } from "./BlogPage";
 import { HomePage } from "./HomePage";
 import { ProfilePage } from "./ProfilePage";
 import { BlogPost } from "./BlogPost";
+import { LoginPage } from "./LoginPage";
+import { LogoutPage } from "./LogoutPage";
 
 //Creating hash router #
 // /#/blog
@@ -21,7 +23,8 @@ function App() {
           <Route path=":slug" element={<BlogPost />} /> 
         </Route>
 
-       
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/logout" element={<LogoutPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<p>Not Found</p>} />
       </Routes>
