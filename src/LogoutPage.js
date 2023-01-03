@@ -1,10 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./auth";
 
 function LogoutPage(){
 
+    const auth = useAuth();
+    
     const logout = (event) => {
         event.preventDefault();
-        console.log("Salir");
+        auth.logout();
     };
 
     return (
